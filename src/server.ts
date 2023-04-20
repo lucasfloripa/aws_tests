@@ -6,11 +6,11 @@ import AWS, { SQS, SNS } from 'aws-sdk'
 import { MessageAttributeMap } from 'aws-sdk/clients/sns'
 
 AWS.config.update({
-  region: 'us-east-1',
+  region: process.env.AWS_REGION,
   account: {
     credentials: {
-      accessKeyId: 'AKIAVLXVIWSTCIQM2J75',
-      secretAccessKey: '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'
+      accessKeyId: process.env.AWS_ACCESS_KEY as string,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY as string
     }
   }
 })
